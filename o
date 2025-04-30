@@ -1,0 +1,22 @@
+  public void commpressedData() {
+        try (InputStream input = new FileInputStream(inFile)) {
+            String ogFileName = inFile.getAbsolutePath().split("\\.")[0];
+            outFile = new File(ogFileName + ".huff");
+            if (!outFile.exists()) outFile.createNewFile();
+            OutputStream output = new FileOutputStream(outFile);
+            // reads the size of the buffer and stores it in buffer
+            int count;
+            while ((count = input.read(buffer)) != -1) {
+                for (int i = 0; i < count; i++) {
+
+                    int originalByteUnsigned = buffer[i] & 0xff;
+                    byte code = codes[originalByteUnsigned];
+                    output.write(code);
+
+                }
+            }
+            output.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
