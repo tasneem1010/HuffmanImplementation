@@ -1,0 +1,35 @@
+.pane
+{
+    -fx-spacing: 30;
+    -fx-alignment: center;
+    -fx-background-color: #d3ebf2;
+}
+.button
+{
+    -fx-background-color: linear-gradient(#2754c4, #647295);
+    -fx-background-insets: 0;
+    -fx-text-fill: #F2EBEF;
+    -fx-padding: 4px 8px;
+    -fx-font-size: 23px;
+    -fx-min-width: 50px;
+    -fx-min-height: 30px;
+}
+.button:pressed
+{
+    -fx-background-color: linear-gradient(#0532a2, #423073);
+
+}
+.label
+{
+    -fx-font-size: 30px;
+}
+.small
+{
+    -fx-font-size: 15px;
+}
+.error-label
+{
+    -fx-font-size: 16px;
+    -fx-text-fill: red;
+
+}
